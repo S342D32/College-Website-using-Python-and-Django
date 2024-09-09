@@ -1,0 +1,80 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<main>
+    <div class="video-background">
+        <video src="{% static 'v1.mp4' %}" autoplay muted loop></video>
+        <div class="caption2">NIIS Institute of Business Administration (NIBA)
+            
+        </div>
+        <div class="caption1">Bring your natural curiosity to our gorgeous campus in Bhubaneswar, Odisha, where we empower exploration from the day you arrive.</div>
+        
+    </div>
+    <section class="scroll-fade">
+        <p>Welcome to our college! Here you will find the best education and facilities...</p>
+    </section>
+    <div class="container">
+        <h1 id="h1">ABOUT US</h1><hr>
+        <p class="p">NIIS Institute of Business Administration (NIBA) is one of the leading institutions providing postgraduate management &amp; technical education in the state. It is the youngest institute under the ambit of NIIS Group of Institutions, Odisha. We have a long history and a rich alumni culture of over 14 years located in India and abroad.</p>
+    </div>
+    <section class="scroll-fade">
+        <div class="gallery">
+            <div><h1 id="h1">Courses Offered</h1></div>
+            <div class="rectangle">
+                <img src="{% static 'c1.jpg' %}" alt="College Photo 1">
+                <div class="caption"><B>MCA</B></div>
+            </div>
+            <div class="rectangle">
+                <img src="{% static 'c2.jpg' %}" alt="College Photo 2">
+                <div class="caption"><B>MBA</B></div>
+            </div>
+            <!-- Add more rectangles as needed -->
+        </div>
+    </section>
+    <!-- Background image section -->
+    <section class="background-section">
+        <!-- This section is used to show the background image -->
+    </section>
+    <section class="scroll-fade">
+        <div class="polygon">
+            <p>Information about the college...</p>
+            <p>Information about the college...</p>
+            <p>Information about the college...</p>
+        </div>
+        <div class="polygon">
+            <p>Information about the college...</p>
+            <p>Information about the college...</p>
+            <p>Information about the college...</p>
+        </div>
+        <!-- Add more polygons as needed -->
+    </section>
+    <!-- Hexagon section -->
+    <section class="scroll-fade">
+        <div class="hexagon-container">
+            <div class="hexagon-body">
+                <img class="hexagon-img" src="{% static 'p1.png' %}" alt="Link 1">
+                <a class="hexagon-title" href="https://link1.com" target="_blank">Classroom lectures</a>
+            </div>
+            <div class="hexagon-body">
+                <img class="hexagon-img" src="{% static 'p2.png' %}" alt="Link 2">
+                <a class="hexagon-title" href="https://link2.com" target="_blank">Live sessions with industry experts</a>
+            </div>
+            <div class="hexagon-body">
+                <img class="hexagon-img" src="{% static 'p3.png' %}" alt="Link 3">
+                <a class="hexagon-title" href="https://link3.com" target="_blank">Assignments<a>
+            </div>
+            <div class="hexagon-body">
+                <img class="hexagon-img" src="{% static 'p4.png' %}" alt="Link 4">
+                <a class="hexagon-title" href="https://link4.com" target="_blank">Networking sessions and engagement activities</a>
+            </div>
+            <div class="hexagon-body">
+                <img class="hexagon-img" src="{% static 'p5.png' %}" alt="Link 5">
+                <a class="hexagon-title" href="https://link5.com" target="_blank">Sessions on emerging technologies and businesses</a>
+            </div>
+        </div>
+    </section>
+    
+    
+</main>
+{% endblock %}

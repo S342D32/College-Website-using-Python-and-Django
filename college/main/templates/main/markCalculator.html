@@ -1,0 +1,150 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <h1 class="h3 text-center mb-4">Marks Calculator</h1>
+
+                        <table id="my_table_1" class="table table-bordered" data-toggle="table" data-sort-stable="true">
+                            <thead>
+                                <tr>
+                                    <th data-sortable="true">Papers</th>
+                                    <th data-sortable="true">Subjects</th>
+                                    <th data-sortable="true">Marks</th>
+                                    <th data-sortable="true">Grade</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Paper-1</td>
+                                    <td>
+                                        <select class="form-select">
+                                            <option value="1" selected>Math</option>
+                                            <option value="2">DBMS</option>
+                                            <option value="3">C</option>
+                                            <option value="3">JAVA</option>
+                                            <option value="3">Python</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="number" class="form-control" id="mark1" oninput="calculateGrade(1)"></td>
+                                    <td><input type="text" class="form-control" id="grade1" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>Paper-2</td>
+                                    <td>
+                                        <select class="form-select">
+                                            <option value="1">Math</option>
+                                            <option value="2" selected>DBMS</option>
+                                            <option value="3">C</option>
+                                            <option value="3">JAVA</option>
+                                            <option value="3">Python</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="number" class="form-control" id="mark2" oninput="calculateGrade(2)"></td>
+                                    <td><input type="text" class="form-control" id="grade2" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>Paper-3</td>
+                                    <td>
+                                        <select class="form-select">
+                                            <option value="1">Math</option>
+                                            <option value="2">DBMS</option>
+                                            <option value="3" selected>C</option>
+                                            <option value="3">JAVA</option>
+                                            <option value="3">Python</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="number" class="form-control" id="mark3" oninput="calculateGrade(3)"></td>
+                                    <td><input type="text" class="form-control" id="grade3" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>Paper-4</td>
+                                    <td>
+                                        <select class="form-select">
+                                            <option value="1">Math</option>
+                                            <option value="2">DBMS</option>
+                                            <option value="3">C</option>
+                                            <option value="3" selected>JAVA</option>
+                                            <option value="3">Python</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="number" class="form-control" id="mark4" oninput="calculateGrade(4)"></td>
+                                    <td><input type="text" class="form-control" id="grade4" readonly></td>
+                                </tr>
+                                <tr>
+                                    <td>Paper-5</td>
+                                    <td>
+                                        <select class="form-select">
+                                            <option value="1">Math</option>
+                                            <option value="2">DBMS</option>
+                                            <option value="3">C</option>
+                                            <option value="3">JAVA</option>
+                                            <option value="3" selected>Python</option>
+                                        </select>
+                                    </td>
+                                    <td><input type="number" class="form-control" id="mark5" oninput="calculateGrade(5)"></td>
+                                    <td><input type="text" class="form-control" id="grade5" readonly></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <label for="finalGrade" class="form-label">Final Grade</label>
+                        <input type="text" id="finalGrade" class="form-control" readonly>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function calculateGrade(paperNumber) {
+        const mark = parseFloat(document.getElementById(`mark${paperNumber}`).value);
+        let grade = '';
+
+        if (!isNaN(mark)) {
+            if (mark >= 90) {
+                grade = 'O';
+            } else if (mark >= 80) {
+                grade = 'E';
+            } else if (mark >= 70) {
+                grade = 'A';
+            } else if (mark >= 60) {
+                grade = 'B';
+            } else {
+                grade = 'F';
+            }
+        }
+
+        document.getElementById(`grade${paperNumber}`).value = grade;
+        calculateFinalGrade();
+    }
+
+    function calculateFinalGrade() {
+        let totalMarks = 0;
+        let count = 0;
+        let invalid = false;
+
+        for (let i = 1; i <= 5; i++) {
+            const mark = parseFloat(document.getElementById(`mark${i}`).value);
+            const grade = document.getElementById(`grade${i}`).value;
+            if (grade === 'Invalid') {
+                invalid = true;
+                break;
+            }
+            if (!isNaN(mark) && mark <= 100) {
+                totalMarks += mark;
+                count++;
+            }
+        }
+
+        const finalGrade = invalid ? 'Invalid' : (totalMarks / count).toFixed(2);
+        document.getElementById('finalGrade').value = finalGrade;
+    }
+</script>
+{% endblock %}

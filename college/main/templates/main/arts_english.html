@@ -1,0 +1,168 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Computer Science - NIIS{% endblock %}
+{% block content %}
+<style>
+    .container {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid #643565;
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    h2, h3 {
+        color: #643565;
+    }
+</style>
+    <div class="container">
+        <h2>Computer Science</h2>
+        <h3>Faculties</h3>
+        
+        <h2>Timetable (MCA 3<sup>rd</sup> Sem Pre Placement Training)</h2>
+        <h3>Room No: 205</h3>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Days/Time</th>
+                    <th>Section</th>
+                    <th>10:15 - 11:15</th>
+                    <th>11:15 - 12:15</th>
+                    <th>12:15 - 2:00</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monday</td>
+                    <td>A</td>
+                    <td>AP</td>
+                    <td>SSD</td>
+                    <td>FST</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>B</td>
+                    <td>WD</td>
+                    <td>SSD Lab</td>
+                    <td>FST</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>A</td>
+                    <td>AP</td>
+                    <td>SSD Lab</td>
+                    <td>FST</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>B</td>
+                    <td>GD</td>
+                    <td>SSD</td>
+                    <td>FST</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>A</td>
+                    <td>AP</td>
+                    <td>SSD</td>
+                    <td>FST</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>B</td>
+                    <td>GD</td>
+                    <td>SSD Lab</td>
+                    <td>FST</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>A</td>
+                    <td>GD</td>
+                    <td>SSD</td>
+                    <td>FST</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>B</td>
+                    <td>AP</td>
+                    <td>SSD Lab</td>
+                    <td>FST</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>A</td>
+                    <td>GD Lab</td>
+                    <td>SSD</td>
+                    <td>FST</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>B</td>
+                    <td>AP</td>
+                    <td>SSD Lab</td>
+                    <td>FST</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>A</td>
+                    <td>WD</td>
+                    <td>SSD Lab</td>
+                    <td>FST</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>B</td>
+                    <td>AP</td>
+                    <td>SSD</td>
+                    <td>FST</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Subject and Faculty List</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Subject</th>
+                    <th>Faculty Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Full Stack Web Development Training (FST)</td>
+                    <td>Professional Trainer</td>
+                </tr>
+                <tr>
+                    <td>Aptitude/Reasoning (AP/RE)</td>
+                    <td>Dr. A. Baliarsingh</td>
+                </tr>
+                <tr>
+                    <td>Group Discussion (GD)</td>
+                    <td>Prof. S. Pradhan</td>
+                </tr>
+                <tr>
+                    <td>Software Skill Development (SSD)</td>
+                    <td>Dr. D.K. Pattanaik / Prof. P. Mitra</td>
+                </tr>
+                <tr>
+                    <td>Technical Skill (Tech) / Web Development (WD)</td>
+                    <td>Prof. P. Mishra</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

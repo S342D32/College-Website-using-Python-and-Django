@@ -1,0 +1,19 @@
+{% load static %}
+{% block content %}
+<header>
+    <div class="header-container">
+        <img src="{% static 'logo1.png' %}" alt="College Logo" class="logo">
+        <div class="header-content">
+            <h1>NIIS INSTITUTE OF BUSINESS ADMINISTRATION, BHUBANESWAR</h1>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'academics' %}">Academics</a></li>
+                    <li><a href="{% url 'admission' %}">Admission</a></li>
+                    <li><a href="{% url 'gallery' %}">Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>
+{% endblock %}

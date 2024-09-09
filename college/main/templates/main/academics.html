@@ -1,0 +1,59 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Academics - NIIS{% endblock %}
+{% block content %}
+<style>
+    .container {
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    ul ul {
+        margin-top: 10px;
+        padding-left: 20px;
+    }
+    
+    li {
+        margin: 10px 0;
+    }
+    
+    a {
+        text-decoration: none;
+        color: #007BFF;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+        color: #0056b3;
+    }
+    
+</style>
+    <div class="container">
+        <h2>Departments</h2>
+        <ul>
+            <li>Arts
+                <ul>
+                    <li><a href="arts_english.html">English</a></li>
+                    <li><a href="arts_sociology.html">Sociology</a></li>
+                </ul>
+            </li>
+            <li>Science
+                <ul>
+                    <li><a href="cs.html">Computer Science</a></li>
+                    <li><a href="science_mathematics.html">Mathematics</a></li>
+                </ul>
+            </li>
+            <li>Commerce
+                <ul>
+                    <li><a href="commerce_accounting.html">Accounting</a></li>
+                    <li><a href="commerce_economics.html">Economics</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+{% endblock %}
